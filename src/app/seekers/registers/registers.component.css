@@ -1,0 +1,18 @@
+.row {
+    display: flex;  
+    gap: 15px;  
+    
+  }
+  .bt {
+    
+    width: auto;
+    height: 58px;
+  }
+  .bt1 {
+    float: right;
+    background-color: #008CBA;
+
+
+
+  }
+  

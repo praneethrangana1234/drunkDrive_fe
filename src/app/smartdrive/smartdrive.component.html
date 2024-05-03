@@ -1,0 +1,195 @@
+<div class="content">
+<h1 class="a">Smartdrive Works</h1>
+<div class="row">
+<div class="coloum">
+<div class="row">
+<mat-form-field appearance="outline">
+    <mat-label>Make</mat-label>
+
+    <mat-select  [(ngModel)]="nn" (ngModelChange)="onchange1(nn)" >
+      <mat-option selected value="1">
+        None
+      </mat-option> 
+    <mat-option [value]="dpt.make"  *ngFor="let dpt of DepartmentList" >
+    
+        {{dpt.make}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <mat-form-field  appearance="outline">
+   <mat-label>Model</mat-label> 
+    <mat-select name="model" [(ngModel)]="nnm" class="form-control">
+     
+      <mat-option selected value="1">
+        None
+      </mat-option>
+      <mat-option [value]="mode.model"  *ngFor="let mode of Modekkist">
+        {{mode.model}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+ </div>
+  <br>
+
+  <div class="row">
+  <mat-form-field  appearance="outline">
+   <mat-label>Useage</mat-label> 
+    <mat-select [(ngModel)]="nnn" >
+     
+      <mat-option selected value="1">
+        None
+      </mat-option>
+      <mat-option value='private'>
+        private
+      </mat-option>
+      <mat-option value='hiring'>
+        hiring
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field  appearance="outline">
+    <mat-label>Vehicle Type</mat-label> 
+     <mat-select [(ngModel)]="nnnn"  >
+      
+       <mat-option selected value="1">
+         None
+       </mat-option>
+       <mat-option value='Motor Bikes'>
+         Motor Bikes
+       </mat-option>
+       <mat-option value='Dual Purpose'>
+         Dual Purpose
+       </mat-option>
+     </mat-select>
+   </mat-form-field>
+</div>
+<div class="row">
+  <div>
+  <mat-form-field appearance="outline">
+    <mat-label>Value</mat-label>
+    <input [(ngModel)]="nnnnm" matInput type="number" (keydown)="restrict($event)" >
+   <!-- <mat-hint>IN Rupies</mat-hint>-->
+</mat-form-field>
+
+  <button mat-raised-button (click)="sett(nn,nnm,nnn,nnnn,nnnnm)" type="button"  class="a">Set</button>
+
+</div>
+<!--<div></div>
+<div></div>-->
+</div>
+</div>
+<div class="coloum"></div>
+<div class="coloum"></div>
+<div class="coloum"></div>
+<div class="coloum">
+  <mat-list role="list">
+    
+    <mat-list-item role="listitem">{{plan}}</mat-list-item>
+    <mat-list-item role="listitem">{{policyFee}}</mat-list-item>
+    <mat-list-item role="listitem">{{lifeCover}}</mat-list-item>
+    <mat-list-item role="listitem">{{totalAnualPremium}}</mat-list-item>
+  </mat-list>
+
+</div>
+</div>
+
+
+</div>
+
+
+<!--
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
+
+    <section class="example-section">
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="value">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Min value</mat-label>
+        <input matInput type="number" [(ngModel)]="min">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Max value</mat-label>
+        <input matInput type="number" [(ngModel)]="max">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width">
+        <mat-label>Step size</mat-label>
+        <input matInput type="number" [(ngModel)]="step">
+      </mat-form-field>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+    </section>
+
+    <section class="example-section">
+      <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+-->
+<mat-card class="example-result-card">
+  <mat-card-content>
+    <h2>Result</h2>
+
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">{{min}}</label>
+      <label class="example-value-label">{{value}}</label>
+      <label id="example-name-label" class="example-name-label">{{max}}</label>
+    </div>
+    <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [discrete]="thumbLabel"
+        [showTickMarks]="showTicks">
+      <input matSliderThumb [(ngModel)]="value">
+    </mat-slider>
+  </mat-card-content>
+</mat-card>
+value:{{set(value)}};
+
+<table mat-table [dataSource]="coverlist" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="demo-position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <!--<td mat-cell *matCellDef="let element"> {{element.position}} </td>-->
+    <td mat-cell *matCellDef="let element"> {{element.plan}} </td>
+
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="demo-name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.policyFee}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="demo-weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.suminsured}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="demo-symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.totalAnualPremium}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+

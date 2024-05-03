@@ -1,0 +1,10 @@
+<h3 mat-dialog-title class = "title">Enter Slip No</h3>
+<mat-divider class = "divider"></mat-divider>
+<div mat-dialog-content class = "content">
+    <mat-form-field class = "" appearance = "outline">
+        <input matInput type = "text" formControlName = "slipNo" >
+    </mat-form-field>
+</div>
+<div mat-dialog-actions class = "actions">
+    <button mat-button (click) = "dialogRef.close(true)">Confirm</button>
+</div>

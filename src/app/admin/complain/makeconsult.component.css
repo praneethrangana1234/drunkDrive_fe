@@ -1,0 +1,36 @@
+.row {
+    display: flex;  
+    gap: 15px;  
+    
+  }
+  .minimized-cell {
+    max-width: 100px; /* Set maximum width for the cells */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow text */
+  }
+  .custom-header {
+    background-color: #337ab7; /* Change the background color to blue */
+    color: #0ba56a; /* Change the text color to white */
+  }
+  .custom-row {
+    background-color: #534f4f; /* Default background color for rows */
+  }
+  
+  .custom-row.active {
+    background-color: #ad302e; /* Background color for rows where status is '1' */
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .table-container {
+    flex: 1; /* Take up remaining space */
+    margin-right: 20px; /* Add spacing between table and image */
+  }
+  
+  .image-container {
+    width: 200px; /* Adjust the width of the image container as needed */
+  }

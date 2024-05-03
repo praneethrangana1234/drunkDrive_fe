@@ -1,0 +1,145 @@
+<div mat-dialog-title>
+    <h1>Employee Form</h1>
+    
+   
+</div>
+<form [formGroup]="empform" (ngSubmit)="onformsubmit()">
+    <div mat-dialog-content class="content">
+       
+       <!-- <img src="./assets/img_avatar.png" alt="Avatar" width="30%">-->
+        <div>
+            <img [src]="preview" alt="Avatar" class="preview" />
+          </div>
+        <div class="row">
+            <div class="col-8">
+             <!-- <label class="btn btn-default p-0">-->
+                <input type="file" accept="image/*" (change)="selectFile($event)" />
+             <!-- </label>-->
+            </div>
+          
+    <div class="col-4">
+              <button
+                class="btn btn-success btn-sm float-right"
+                [disabled]="!selectedFiles"
+                (click)="upload()"
+              >
+                Upload
+              </button>
+            </div>
+          </div>
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" formControlName="address">
+            </mat-form-field>
+
+        </div>
+        
+
+        <div class="row">
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>NIC</mat-label>
+                <input matInput type="nic" formControlName="nic">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>DOB</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthday">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+           
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="others">Others</mat-radio-button>
+            </mat-radio-group>
+            
+
+            <!--<mat-form-field class="ss1">
+                <mat-label>{{mat}}</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="logId">
+            </mat-form-field>-->
+            
+           
+        </div>
+
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>TP NO</mat-label>
+                <input matInput type="text" formControlName="tp">
+                <mat-error *ngIf="empform.get('tp')?.hasError('required')">
+                    TP NO is required
+                </mat-error>
+                <mat-error *ngIf="empform.get('tp')?.hasError('tenDigit')">
+                    TP NO must be a 10-digit number
+                </mat-error>
+            </mat-form-field>
+      <!--     <mat-form-field appearance="outline" class="ss">
+                <mat-label>EMail</mat-label>
+                <input matInput type="email" formControlName="gmail">
+            </mat-form-field>
+            
+--> 
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>EMail</mat-label>
+                <input matInput type="email" formControlName="gmail">
+                <mat-error *ngIf="empform.get('gmail')?.hasError('required')">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="empform.get('gmail')?.hasError('email')">
+                    Invalid email format
+                </mat-error>
+            </mat-form-field>
+
+
+        </div>
+
+      <!--  <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Education</mat-label>
+                <mat-select formControlName="education" >
+                    <mat-option *ngFor="let val of education" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Company</mat-label>
+                <input matInput type="text" formControlName="comany">
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Experience</mat-label>
+                <input matInput type="number" formControlName="experience">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Package</mat-label>
+                <input matInput type="number" formControlName="package" value="0">
+                <mat-hint>IN Rupies</mat-hint>
+            </mat-form-field>
+
+        </div>
+-->
+ 
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button  type="button" [mat-dialog-close]="false" class="a">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" class="b">{{data ? 'Update': 'Save'}}</button>
+        </div>
+    </div>
+</form>

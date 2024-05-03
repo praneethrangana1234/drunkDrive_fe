@@ -1,0 +1,41 @@
+.content {
+    padding-top: 0px;
+    background-color: #dfd8dd;
+    }
+  .row {
+    display: flex;  
+    gap: 5px;  
+    
+  }
+  
+  .ss {
+    width: 400px;
+    height: 60px; 
+  }
+  .ss1
+  {
+    width: 30px;
+    height: 20%; 
+    /**display: none;**/
+  }
+  .action {
+      padding: 0px 0px 20px;
+     
+  }
+  .a 
+  {
+      flex: 1;
+  }
+  .b
+  {
+      flex: 1;
+  }
+  img {
+      border-radius: 50%;
+    }
+    .preview
+    {
+      width: 100%;
+      max-width: 250px;
+      height: auto; 
+    }

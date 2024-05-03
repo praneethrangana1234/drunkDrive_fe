@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstname": "Praneeth",
+      "lastname": "Rangana",
+      "email": "trtr@gmail.com",
+      "dob": "1992-05-15T18:30:00.000Z",
+      "gender": "male",
+      "education": "a/l",
+      "comany": "dsd",
+      "experience": 1,
+      "package": 1,
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<div class="row col-md-9">
+    <div id="chart" class="col-md-6 mb-2">
+        <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [title]="chartOptions.title!"
+        [labels]="chartOptions.labels!"
+        [responsive]="chartOptions.responsive!"
+        ></apx-chart>
+    </div>
+    <div class="col-md-6 mb-2">
+        <apx-chart [series]="seriesBar" [chart]="chartBar" [title]="titleBar" [xaxis]="xaxisBar" [plotOptions]="plotOptionsBar"
+        [dataLabels]="dataLabelsBar"></apx-chart>
+    </div>
+</div>
+<!--<button type="button" class="btn btn-primary">Primary</button>-->

@@ -1,0 +1,125 @@
+<div mat-dialog-title  class="mm">
+    <h1>Driver Form</h1>
+    
+   
+</div>
+<form [formGroup]="empform" (ngSubmit)="onformsubmit()">
+    <div mat-dialog-content class="content">
+       
+       <!-- <img src="./assets/img_avatar.png" alt="Avatar" width="30%">-->
+        <div>
+            <img [src]="preview" alt="Avatar" class="preview" />
+          </div>
+        <div class="row">
+            <div class="col-8">
+             <!-- <label class="btn btn-default p-0">-->
+                <input type="file" accept="image/*" (change)="selectFile($event)" />
+             <!-- </label>-->
+            </div>
+          
+            <div class="col-4">
+              <button
+                class="btn btn-success btn-sm float-right"
+                [disabled]="!selectedFiles"
+                (click)="upload()"
+              >
+                Upload
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>EPF</mat-label>
+                <input matInput type="text" formControlName="epf">
+            </mat-form-field>
+
+        </div>
+          <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" formControlName="address">
+            </mat-form-field>
+
+        </div>
+        
+
+        <div class="row">
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>NIC</mat-label>
+                <input matInput type="nic" formControlName="nic">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>DOB</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthday">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+           
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+                <mat-radio-button value="others">Others</mat-radio-button>
+            </mat-radio-group>
+
+           
+        </div>
+
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>TP NO</mat-label>
+                <input matInput type="text" formControlName="tp">
+                <mat-error *ngIf="empform.get('tp')?.hasError('required')">
+                    TP NO is required
+                </mat-error>
+                <mat-error *ngIf="empform.get('tp')?.hasError('invalid')">
+                    Invalid TP NO
+                </mat-error>
+                <mat-error *ngIf="empform.get('tp')?.hasError('lessThanTenDigits')">
+                    TP NO must have at least 10 digits
+                </mat-error>
+                <mat-error *ngIf="empform.get('tp')?.hasError('moreThanTenDigits')">
+                    TP NO cannot have more than 10 digits
+                </mat-error>
+            </mat-form-field>
+      <!--    <mat-form-field appearance="outline" class="ss">
+               <mat-label>EMail</mat-label>
+                <input matInput type="email" formControlName="gmail">
+            </mat-form-field>
+            
+        -->
+       
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>EMail</mat-label>
+                <input matInput type="email" formControlName="gmail">
+                <mat-error *ngIf="empform.get('gmail')?.hasError('required')">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="empform.get('gmail')?.hasError('email')">
+                    Invalid email format
+                </mat-error>
+            </mat-form-field>
+        
+
+
+        </div>
+
+    
+ 
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button  type="button" [mat-dialog-close]="false" class="a">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" class="b">{{data ? 'Update': 'Save'}}</button>
+        </div>
+    </div>
+</form>

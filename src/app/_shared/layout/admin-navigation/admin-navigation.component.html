@@ -1,0 +1,79 @@
+<mat-sidenav-container class = "sidenav-container" [hasBackdrop] = "true">
+    <mat-sidenav #drawer class = "sidenav" fixedInViewport = "true" [attr.role] = "(isHandset$ | async) ? 'dialog' : 'navigation'" 
+        [mode] = "(isHandset$ | async) ? 'over' : 'side'" [opened] = "!(isHandset$ | async)!.matches">
+        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item [routerLink] = "['/admin/admin-dashboard']" (click) = "toggle()">
+                <mat-icon>perm_identity</mat-icon>
+                <span class = "mx-1">DASHBOARD</span>
+            </a>
+            <a mat-list-item [routerLink] = "['/admin/driver']" (click) = "toggle()">
+                <mat-icon>perm_identity</mat-icon>
+                <span class = "mx-1">ADD DRIVER</span>
+            </a>
+            <a mat-list-item [routerLink] = "['/admin/root']" (click) = "toggle()">
+                <mat-icon>home</mat-icon>
+                <span class = "mx-1">ADD ROOT</span>
+            </a>
+
+            
+
+            <a mat-list-item [routerLink] = "['/admin/vehicle']" (click) = "toggle()">
+                <mat-icon>commute</mat-icon>
+                <span class = "mx-1">ADD VEHICLE</span>
+            </a>
+          <!--  <a mat-list-item [routerLink] = "['/admin/makeconsult']" (click) = "toggle()">
+                <mat-icon>alarm</mat-icon>
+                <span class = "mx-1">SET CONSULTANT</span>
+            </a>
+-->
+<a mat-list-item [routerLink] = "['/admin/employee']" (click) = "toggle()">
+    <mat-icon>work</mat-icon>
+    <span class = "mx-1">ADD EMPLOYEE</span>
+</a>
+<a mat-list-item [routerLink] = "['/admin/complain']" (click) = "toggle()">
+    <mat-icon>alarm</mat-icon>
+    <span class = "mx-1">COMPLAIN VIEWER</span>
+</a>
+
+
+
+            <a mat-list-item [routerLink] = "['/admin/print']" (click) = "toggle()">
+                <mat-icon>assignment</mat-icon>
+                <span class = "mx-1">REPORTES</span>
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color = "primary">
+            <button
+                type = "button"
+                aria-label = "Toggle sidenav"
+                mat-icon-button
+                (click) = "drawer.toggle()"
+                *ngIf = "(isHandset$ | async)!.matches">
+                <mat-icon aria-label = "Side nav toggle icon">menu</mat-icon>
+            </button>
+            <mat-toolbar-row>
+                <button mat-icon-button (click) = "drawer.toggle()" aria-label="Example icon-button with a menu">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span class = "topName"></span>
+                <span class = "example-spacer"></span>
+                Admin
+                <button mat-icon-button [matMenuTriggerFor] = "menu" aria-label = "Example icon-button with a menu">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+                <mat-menu #menu = "matMenu" >
+                    <button mat-menu-item (click) = "logout()">
+                        <mat-icon class = "example-icon">power_settings_new</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+            </mat-toolbar-row>
+        </mat-toolbar>
+         
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

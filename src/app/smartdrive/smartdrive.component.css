@@ -1,0 +1,149 @@
+.content
+{
+    padding: 0 14px;  
+    text-align: center;
+}
+
+.row {
+    display: flex;  
+    gap: 25px;  
+    
+  }
+
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  
+  .example-card {
+    margin-bottom: 10px;
+  }
+  mat-slider {
+    width: 300px;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .slider {
+    position: relative;
+    height: 100%;
+  }
+  
+  .dotsContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .example-h2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .example-margin {
+    margin: 8px;
+  }
+  
+  .example-width {
+    max-width: 180px;
+    width: 100%;
+  }
+  
+  .mat-mdc-slider {
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .mat-mdc-card + .mat-mdc-card {
+    margin-top: 8px;
+  }
+  
+  .example-result-card h2 {
+    margin: 0 8px;
+  }
+  
+  .example-label-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px 0;
+    max-width: 284px;
+  }
+  
+  .example-result-card .example-value-label {
+    font-weight: 600;
+  }
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-column-demo-position {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-demo-name {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+  
+  .mat-column-demo-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-demo-symbol {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }

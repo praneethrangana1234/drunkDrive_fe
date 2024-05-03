@@ -1,0 +1,73 @@
+<div mat-dialog-title>
+    <h1>Vehicle Details Form</h1>
+    
+   
+</div>
+<form [formGroup]="empform" (ngSubmit)="onformsubmit()">
+    <div mat-dialog-content class="content">
+       
+       <!-- <img src="./assets/img_avatar.png" alt="Avatar" width="30%">-->
+        
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Vehicle No</mat-label>
+              <!--  <input matInput type="text" formControlName="jobType">-->
+                           <input matInput type="text" formControlName="vehicleNo">
+
+               </mat-form-field>
+          <!--   <mat-form-field appearance="outline" class="ss">
+                <mat-label>Type</mat-label>
+            <input matInput type="text" formControlName="code">
+                           <input matInput type="text" formControlName="type">
+
+            </mat-form-field>-->
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Type</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let edu of education" [value]="edu">{{ edu }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Owner</mat-label>
+                <input matInput type="text" formControlName="owner">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Root Id</mat-label>
+                <input matInput type="text" formControlName="rootId">
+            </mat-form-field>
+
+        </div>
+        <div class="row">
+
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>Seat Count</mat-label>
+                <input matInput type="text" formControlName="seatCount">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="ss">
+                <mat-label>year</mat-label>
+                <input matInput type="text" formControlName="year">
+            </mat-form-field>
+
+        </div>
+        
+ <!--   "owner": "P.Praneeth Rangana",
+    "rootId": "1",
+    "seatCount": "20",
+    "type": "VAN",
+    "vehicleNo": "NB -2040",
+    "year": "2003",-->
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button  type="button" [mat-dialog-close]="false" class="a">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" class="b">{{data ? 'Update': 'Save'}}</button>
+        </div>
+    </div>
+</form>
+
+
